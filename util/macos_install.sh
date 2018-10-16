@@ -18,8 +18,13 @@ if ! brew --version 2>&1 > /dev/null; then
 		esac
 	done
 fi
-
-brew tap osx-cross/avr
+# https://www.reddit.com/r/olkb/comments/939tz6/lets_split_socketsvitamins_failing_with_default/
+# 現行mac + mint60にてエラーが発生したためコメントアウト
+#brew tap osx-cross/avr
 brew tap PX4/homebrew-px4
+brew untap osx/cross/avr
+brew tap leico/avr
 brew update
-brew install avr-gcc@7 gcc-arm-none-eabi dfu-programmer avrdude
+brew install gcc-arm-none-eabi dfu-programmer avrdude
+#brew install avr-gcc@7
+brew install avr-gcc@8_1
